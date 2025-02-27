@@ -1,0 +1,3 @@
+# Browser Fingerprint Blocker
+
+Browser Fingerprint Blocker is a Chrome extension that protects your privacy by preventing websites from identifying you through browser fingerprinting techniques. It spoofs or randomizes various browser attributes that are commonly used for fingerprinting, including User Agent, Canvas, WebRTC, Language, Screen Resolution, Timezone, and Hardware Information. The extension offers three randomization intervals (per session, per website, or time-based) and allows you to toggle individual protection features. To install, enable Developer Mode in Chrome's extension page, click "Load unpacked", and select this folder.

@@ -1,6 +1,3 @@
-// Background script for Browser Fingerprint Blocker
-
-// Default settings
 const defaultSettings = {
   enabled: true,
   protectUserAgent: true,

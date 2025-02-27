@@ -1,6 +1,3 @@
-// Popup script for Browser Fingerprint Blocker
-
-// DOM
 const enabledToggle = document.getElementById('enabled');
 const protectUserAgentToggle = document.getElementById('protectUserAgent');
 const protectCanvasToggle = document.getElementById('protectCanvas');
@@ -15,12 +12,10 @@ const timeRadio = document.getElementById('time');
 const regenerateButton = document.getElementById('regenerate');
 const statusText = document.getElementById('status');
 
-// Load setting
 chrome.runtime.sendMessage({ action: 'getSettings' }, (response) => {
   if (response && response.settings) {
     const settings = response.settings;
     
-    // Ui update
     enabledToggle.checked = settings.enabled;
     protectUserAgentToggle.checked = settings.protectUserAgent;
     protectCanvasToggle.checked = settings.protectCanvas;
@@ -46,7 +41,6 @@ chrome.runtime.sendMessage({ action: 'getSettings' }, (response) => {
   }
 });
 
-// Save settings
 function saveSettings() {
   const settings = {
     enabled: enabledToggle.checked,
@@ -72,7 +66,7 @@ function getSelectedRandomizationInterval() {
   if (sessionRadio.checked) return 'session';
   if (siteRadio.checked) return 'site';
   if (timeRadio.checked) return 'time';
-  return 'session'; // Default
+  return 'session';
 }
 
 function updateStatusText(enabled) {
@@ -104,4 +98,4 @@ regenerateButton.addEventListener('click', () => {
       regenerateButton.disabled = false;
     }, 1500);
   });
-});}
+});
